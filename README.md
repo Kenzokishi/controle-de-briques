@@ -2,6 +2,8 @@
 
 App de controle para quem revende peças de computador ("briques"): compra, venda, troca e desmonte de kits, mostrando o lucro de verdade de cada negócio. Fiz para um revendedor de peças.
 
+**[Abrir a demo](https://kenzokishi.github.io/controle-de-briques/)** (com dados de exemplo) · licença MIT
+
 <img src="docs/desktop.jpg" alt="Painel com lucro do mês, régua de margem, lucro por dia e contas em aberto" width="100%">
 
 <p align="center"><img src="docs/mobile.jpg" alt="O app no celular" width="300"></p>
