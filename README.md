@@ -23,7 +23,7 @@ Nessa revenda, quase nenhum negócio é simples. Um kit entra como parte do paga
 
 ## Como funciona
 
-HTML, CSS e JavaScript puros num arquivo só, sem framework e sem build. Os dados ficam no navegador (`localStorage`). Quando o app roda dentro do Claude, ele usa o armazenamento do usuário para sincronizar entre aparelhos.
+HTML, CSS e JavaScript puros num arquivo só, sem framework e sem build. Os dados ficam salvos no próprio navegador (`localStorage`), sem servidor.
 
 ## Rodar
 

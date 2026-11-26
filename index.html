@@ -489,19 +489,8 @@ function openPay(kind,o){
 }
 
 /* ---------- persistence ---------- */
-let backend=null,saveT=null,saving=false,again=false;
 function commit(){
-  S.sample=0;try{localStorage.setItem(LK,JSON.stringify(S))}catch(e){}
-  if(backend){clearTimeout(saveT);saveT=setTimeout(flush,500)}
-}
-async function flush(){
-  if(saving){again=true;return}saving=true;const body=JSON.parse(JSON.stringify(S));
-  try{await backend.set(body)}catch(e){
-    if(e&&e.code==='unavailable'){await new Promise(r=>setTimeout(r,900));try{await backend.set(body)}catch(e2){}}
-    else if(e&&e.code==='quota_exceeded')toast('Limite de armazenamento da conta atingido. Os dados ficam neste navegador.');
-    else backend=null;
-  }
-  saving=false;if(again){again=false;flush()}
+  S.sample=0;try{localStorage.setItem(LK,JSON.stringify(S))}catch(e){toast('Não foi possível salvar neste navegador.')}
 }
 
 /* ---------- toast / float ---------- */
@@ -698,16 +687,6 @@ const h=location.hash.slice(1);if(TABS.some(t=>t[0]===h))view.tab=h;
 let local=null;try{local=JSON.parse(localStorage.getItem(LK))}catch(e){}
 if(local&&Array.isArray(local.items))S=norm(local);else{const s=sample();S.items=s.items;S.sales=s.sales;S.sample=1}
 render();
-(async()=>{
-  try{
-    if(!window.claude||!window.claude.use)return;
-    const [db,user]=await Promise.all([window.claude.use('db'),window.claude.use('user')]);
-    const id=user?await user.id():null;if(!db||!id)return;
-    const ref=db.doc('data/users/'+id+'/briques');const snap=await ref.get();backend=ref;
-    if(snap.exists){S=norm(JSON.parse(JSON.stringify(snap.data())));try{localStorage.setItem(LK,JSON.stringify(S))}catch(e){}if($('sheet').hidden)render()}
-    else if(!S.sample)flush();
-  }catch(e){}
-})();
 }
 </script>
 </body>
