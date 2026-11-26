@@ -1,6 +1,6 @@
 # Controle de briques
 
-App de controle para quem revende peças de computador ("briques"): compra, venda, troca e desmonte de kits, mostrando o lucro de verdade de cada negócio. Fiz para um revendedor que controlava tudo no caderno e no WhatsApp.
+App de controle para quem revende peças de computador ("briques"): compra, venda, troca e desmonte de kits, mostrando o lucro de verdade de cada negócio. Fiz para um revendedor de peças.
 
 <img src="docs/desktop.jpg" alt="Painel com lucro do mês, régua de margem, lucro por dia e contas em aberto" width="100%">
 
@@ -8,7 +8,7 @@ App de controle para quem revende peças de computador ("briques"): compra, vend
 
 ## O problema
 
-Nessa revenda, quase nenhum negócio é simples. Um kit entra como parte do pagamento de outro (o "rolo"), depois é desmontado e vendido peça por peça, e às vezes a venda fica no fiado. No caderno, ninguém sabe quanto cada negócio deu de lucro, nem quanto dinheiro está parado no estoque.
+Nessa revenda, quase nenhum negócio é simples. Um kit entra como parte do pagamento de outro (o "rolo"), depois é desmontado e vendido peça por peça, e às vezes a venda fica no fiado. Sem um sistema, fica difícil saber quanto cada negócio deu de lucro e quanto dinheiro está parado no estoque.
 
 ## O que o app faz
 
